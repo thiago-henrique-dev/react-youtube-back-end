@@ -1,7 +1,15 @@
 import express from 'express'
-import { test } from "../controllers/user.js"
+import { updateUser, deleteUser, getUser, subscribe, unsubscribe, like, dislike  } from "../controllers/user.js"
 
 const router = express.Router()
+
+router.put("/:id", updateUser)
+router.delete("/:id", deleteUser)
+router.get("/find", getUser)
+router.put("/sub/:id", subscribe)
+router.put("/unsub/:id", unsubscribe)
+router.put("/like/:videoId", like)
+router.put("/dislike/:videoId", dislike)
 
 
 
